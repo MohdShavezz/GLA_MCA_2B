@@ -1,0 +1,10 @@
+h2{
+    color: yellow;
+}
+
+#box{}
+#box nav{}
+#box nav .left{}
+#box nav .right{}
+
+#box nav .left,.right{}
