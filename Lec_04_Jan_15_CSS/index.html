@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        nav {
+            width: 100%;
+            border: 1px solid;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav .left {
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+
+        nav .right {
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+        }
+
+        nav .right a {
+            text-decoration: none;
+        }
+
+        .common-btn {
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: 1px solid;
+            cursor: pointer;
+        }
+        .common-btn:hover {
+           background-color: rgb(100, 119, 217) !important;
+        }
+
+        aside {
+            background: #6d4cb1;
+            width: 12rem;
+            height: 65vh;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            position: absolute;
+            transition: .5s ease;
+            color: white;
+        }
+
+        aside ul {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        aside ul li {
+            padding-bottom: 1rem;
+        }
+
+        aside i {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+
+        .hide {
+            margin-left: -9rem;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .hero .left ,.hero .right{
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hero .left{
+                padding-left: 7rem;
+        }
+        .bubble{
+            width: 8rem;height: 8rem;background-color: #6d4cb1;position: absolute;
+            border-radius: 100px;
+            top: 50%;
+            right: -50px;
+                opacity: .5;
+    z-index: -1;
+        }
+        @media (max-width: 768px) {
+   nav .right a{
+    display: none;
+   }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bubble"></div>
+        <nav>
+
+            <div class="left">
+                LOGO
+            </div>
+            <div class="right">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Blog</a>
+                <a href="">Services</a>
+                <button class="common-btn login-btn">Login</button>
+                <button class="common-btn signup-btn" style="background-color: #6d4cb1;color: white;">Signup</button>
+            </div>
+        </nav>
+
+        <div style="display: flex;">
+            <aside>
+                <i class="fa fa-bars" id="icon"></i>
+                <ul>
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                    <li>Four</li>
+                    <li>Five</li>
+                </ul>
+            </aside>
+
+            <div class="hero">
+                <div class="left">
+                    <h1>
+                        Revolutionize Your Academic Writing Workflow With ACADLANCE
+                    </h1>
+                    <p>
+                        Our platform is a perfect blend for both experts and clients! Experts can showcase their skills
+                        and secure fair pay, while clients can access top-tier experts and streamline projects
+                        effortlessly.
+                    </p>
+                    <button class="common-btn" style="font-weight: bold;padding: .5rem;align-self: flex-start;">GET STARTED</button>
+                </div>
+                <div class="right">
+                    <img src="womanlaptop.webp" alt="womanlaptop" height="300">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('icon').addEventListener('click', () => {
+            // document.querySelector('aside').style.display='none'
+            // document.querySelector('aside').classList.add('hide')
+            document.querySelector('aside').classList.toggle('hide')
+        })
+    </script>
+</body>
+
+</html>
