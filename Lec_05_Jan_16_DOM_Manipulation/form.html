@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form>
+        <input type="text" placeholder="name" name="name" id="name"> <br>
+        <input type="text" placeholder="age" name="age" id="age"> <br>
+        <input type="email" placeholder="email" name="email" id="email"> <br>
+        <input type="file" accept="image/*" id="photo"> <br>
+        <button id="submit">submit</button>
+    </form>
+
+    <div class="output">
+        <!-- <p>{name}</p>
+        <p>{age}</p>
+        <p>{email}</p>
+        <img src="photo" alt=""> -->
+    </div>
+
+    <script>
+        document.querySelector('#submit').addEventListener('click', (e) => {
+            e.preventDefault()
+            // take form input and render them on UI
+            const name = document.getElementById('name')
+            const email = document.getElementById('email')
+            const age = document.getElementById('age')
+            const photo = document.getElementById('photo')
+            // console.log(name.value)
+            let output=document.querySelector('.output')
+            let namep=document.createElement('p')
+            namep.innerText=name.value
+            output.appendChild(namep)
+            let agep=document.createElement('p')
+            agep.innerText=age.value
+            output.appendChild(agep)
+            let emailp=document.createElement('p')
+            emailp.innerText=email.value
+            output.appendChild(emailp)
+            let img=document.createElement('img')
+            img.src=URL.createObjectURL(photo.files[0])
+            output.appendChild(img)
+            
+        })
+
+        function fn(e) {
+            e.preventDefault()
+            // using FormData 
+            // const formData = new FormData(e.target);
+            // //  console.log(formData.get('name'))
+            // const dataObject = Object.fromEntries(formData.entries())
+            // console.log(dataObject)
+        }
+    </script>
+</body>
+
+</html>

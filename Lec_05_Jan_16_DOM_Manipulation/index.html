@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h2>DOM Manipulation</h2>
+
+    <button id="red">red</button>
+    <button id="yellow" onclick="fn()" onmouseenter="mouseenter()" onmouseleave="mouseleave()">yellow</button>
+    <button class="pink">pink</button>
+    <hr>
+    <section>
+        <p>one </p>
+        <p>two </p>
+        <p>three</p>
+    </section>
+    <hr>
+
+    <article style="background-color: yellow;">
+        <p>my content 1</p>
+        <p>my content 2</p>
+        <p id="par">my content 3</p>
+
+    </article>
+
+    <input type="text" placeholder="name" id="name">
+
+
+    <script>
+
+        //load event
+        window.addEventListener('load', () => {
+            console.log('loading..')
+        })
+
+        // change event 
+        document.getElementById('name').addEventListener('change', (e) => {
+            console.log(e.target.value)
+        })
+
+        // remove element 
+        // let par=document.getElementById('par')
+        // par.remove()
+
+        const article = document.querySelector('article')
+        const h4 = document.createElement('h4')
+        h4.innerText = 'new node'
+        // article.appendChild(h4)  // at the last insert 
+        article.insertAdjacentElement('afterbegin', h4)
+
+
+        const pink = document.querySelector('.pink')
+        pink.addEventListener('click', () => {
+            // pink.innerText='<h2>update pink</h2>'
+            pink.innerHTML = '<h2>update pink</h2>'
+        })
+
+        //console all paragraph data     
+        const section = document.querySelectorAll('section p')
+        section.forEach(element => {
+            console.log(element.innerText)
+        });
+
+        function fn() {
+            console.log('clicked!')
+        }
+        function mouseenter() {
+            console.log('mouseenter!')
+        }
+        function mouseleave() {
+            console.log('mouseleave!')
+        }
+        const red = document.getElementById('red')
+        red.addEventListener('click', () => {
+            // alert('red is alerted')
+            document.body.style.backgroundColor = 'red'
+            //  red.style.display='none'
+        })
+
+
+    </script>
+</body>
+
+</html>
