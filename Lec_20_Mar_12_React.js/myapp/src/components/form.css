@@ -1,0 +1,15 @@
+form{
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+        align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1rem;
+        width: 50%;
+    margin: auto;
+    border-radius: 5px;
+}
+form h2{
+    margin: .5rem 0;
+}
